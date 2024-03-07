@@ -1,0 +1,13 @@
+BEGIN_PROLOG
+
+validatorAna:
+{
+  module_type: "GenRecoValidator"
+  SliceLabel: "pandora"
+  IonAndScintLabel: "IonAndScint"
+  GenieGenModuleLabel: "generator"
+  HitsModuleLabel: "gaushit"
+  PhotonsLiteModuleLabel: "PDFastSim"
+}
+
+END_PROLOG
