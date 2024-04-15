@@ -1,0 +1,15 @@
+BEGIN_PROLOG
+
+michelElectron:
+{
+  module_type: "MichelElectron"
+  MCParticleModuleLabel: "largeant"
+  SimChannelModuleLabel: "elecDrift"
+  HitsModuleLabel: "gaushit"
+  GenieGenModuleLabel: "generator"
+  MCTrackModuleLabel: ""
+  TrackModuleLabel: "pandoraTrack"
+  PFPModuleLabel: "pandora"
+}
+
+END_PROLOG

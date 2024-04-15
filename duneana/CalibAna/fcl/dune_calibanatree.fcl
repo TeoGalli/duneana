@@ -1,0 +1,35 @@
+BEGIN_PROLOG
+
+dune_calibanatree: {
+  module_type: CalibAnaTree
+  CALOproducer: "pandoracalo"
+  TRKproducer:  "pandoraTrack"
+  TRKHMproducer:  "" # Track Hit Metadata module; same as TRKproducer by default
+  T0producers: ["pandora"]
+  PFPproducer: "pandora"
+  G4producer: ""
+  SimChannelproducer: ""
+  HITproducer: "gaushit" # for standard sims, use gaushit, or pandora
+  RawDigitproducers: ["daq"]
+  RequireT0: false
+  HitRawDigitsTickCollectWidth: 200
+  DoTailFit: false
+  SilenceMissingDataProducts: true
+  SelectionTools: []
+}
+
+dune_calibanatree_selectall: {
+  tool_type: CalibAnaTreeSelectAllTracks
+  RequireT0: false
+}
+
+dune_calibanatree.SelectionTools: [@local::dune_calibanatree_selectall]
+
+
+dune_calibanatree_mc: @local::dune_calibanatree
+dune_calibanatree_mc.G4producer: "largeant"
+# dune_calibanatree_mc.SimChannelproducer: "largeant" # before factorisation, use tpcrawdecoder for factorised sim scheme
+dune_calibanatree_mc.SimChannelproducer: "elecDrift" # before factorisation, use tpcrawdecoder for factorised sim scheme
+
+
+END_PROLOG
